@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // flip
     const flipCard = (e) => {
-      
-      if (e.target.getAttribute('src') === '') return;
 
+      if (e.target.getAttribute('src') === '') return;
+      if (cardsChosen.length === 2) return;
       let cardID = e.target.getAttribute('data-id')
       cardsChosen.push(cardArray[cardID].Name)
       cardsChosenID.push(cardID)
