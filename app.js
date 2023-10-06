@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('You found a match!')
         cards[optionOneID].setAttribute('src', '')
         cards[optionTwoID].setAttribute('src', '')
+        
         cardsWon.push(cardsChosen)
       } else {
         cards[optionOneID].setAttribute('src', 'images/blank.png')
@@ -47,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // flip
     const flipCard = (e) => {
+      
+      if (e.target.getAttribute('src') === '') return;
+
       let cardID = e.target.getAttribute('data-id')
       cardsChosen.push(cardArray[cardID].Name)
       cardsChosenID.push(cardID)
